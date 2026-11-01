@@ -126,7 +126,7 @@ jobs:
           }
 
           try {
-            python main.py --cookies-dir cookies_bounty --delete-all-old-chats --reuse-cookies --no-reuse-cookies-exit --modal "sonnet 4.6" --model-thinking no --model-efficiency low --carry-last-responses 1 --session-loop --input .\prompts\bounty_solver.txt --recursive --mcp-running-port 3000
+            python main.py --cookies-dir cookies_bounty --delete-all-old-chats --reuse-cookies --no-reuse-cookies-exit --modal "sonnet 4.6" --model-thinking no --model-efficiency low --carry-last-responses 1 --session-loop --input .\prompts\bounty_solver.txt --recursive --mcp-running-port 3000 --idle-sessions 1
           } finally {
             Write-Host "Stopping MCP server (PID: $($mcpProcess.Id))..."
             Stop-Process -Id $mcpProcess.Id -Force -ErrorAction SilentlyContinue
