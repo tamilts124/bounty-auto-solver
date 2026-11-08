@@ -108,6 +108,7 @@ jobs:
         working-directory: webauto/bounty-data
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          PYTHONIOENCODING: "utf-8"
         run: |
           python fetch_bounties.py 50
 
